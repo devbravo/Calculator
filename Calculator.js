@@ -5,34 +5,35 @@ class Calculator {
     this.clear();
   }
 
-  // Clear the display after every initiation
+  // clears the display after initiazion
   clear() {
     this.previousOperand = '';
     this.currentOperand = '';
     this.operand = undefined;
   }
 
+  // Appends a number
   appendNumber(number) {
     this.currentOperand = this.currentOperand.toString() + number.toString();
   }
 
+  // Choose an operand (+, -, *, /, =)
   chooseOperand(operand) {
     this.operand = operand;
     this.previousOperand = this.currentOperand;
     this.currentOperand = '';
   }
 
-  compute() {}
-
+  // Updates the display when clicking
   updateDisplay() {
     this.currentTextElement.innerText = this.currentOperand;
     this.previousTextElement.innerText = this.previousOperand;
   }
 }
 const numberBtn = document.querySelectorAll('[data-number]');
-const OperandBtn = document.querySelectorAll('[data-operand]');
-const equalBtn = document.querySelector('[data-equal]');
+const operandBtn = document.querySelectorAll('[data-operand]');
 const clearBtn = document.querySelector('[data-clear]');
+const equalBtn = document.querySelector('[data-equal]');
 const previousTextElement = document.querySelector('[data-previous]');
 const currentTextElement = document.querySelector('[data-current]');
 
@@ -45,7 +46,7 @@ numberBtn.forEach(button => {
   });
 });
 
-OperandBtn.forEach(button => {
+operandBtn.forEach(button => {
   button.addEventListener('click', () => {
     calculator.chooseOperand(button.innerText);
     calculator.updateDisplay();
