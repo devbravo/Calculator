@@ -18,7 +18,9 @@ class Calculator {
 
   // Add the last 10 calculations to an array for display
   calcToArray() {
-    this.array.push(this.currentTextElement.innerText);
+    this.array.push(
+      this.previousTextElement.innerText + this.currentTextElement.innerText
+    );
     if (this.array.length > 10) {
       this.array.shift();
     }
