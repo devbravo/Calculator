@@ -9,7 +9,7 @@
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(to right, #00aaff, #00ff6c);
+  background: linear-gradient(to right, #00d9ff, #892fff);
 }
 
 .calc-container {
@@ -32,24 +32,41 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
   flex-direction: column;
-  padding-right: 1rem;
-  padding-bottom: 0.3rem;
-  font-size: 1.4rem;
-  /* word-wrap: break-word;
-  word-break: break-all; */
+  flex-basis: 0;
+  height: auto;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+
+.calc-display .tenPrevCalc {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  min-height: 1.1rem;
+  margin-left: 0.4rem;
+  margin-top: 0.3rem;
 }
 
 .calc-display .previous {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1rem;
+  display: flex;
+  min-height: 1.2rem;
+  margin-left: 0.4rem;
 }
 
 .calc-display .current {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  min-height: 1.2rem;
+  padding-right: 0.5rem;
+  /* margin-bottom: 0.3rem; */
 }
 
 button {
