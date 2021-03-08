@@ -1,8 +1,8 @@
 class Calculator {
-  constructor(previousTextElement, currentTextElement, prevCalcTextElement) {
+  constructor(previousTextElement, currentTextElement, calcHistory) {
     this.previousTextElement = previousTextElement;
     this.currentTextElement = currentTextElement;
-    this.prevCalcTextElement = prevCalcTextElement;
+    this.calcHistory = calcHistory;
     this.array = [];
     this.clear();
   }
@@ -13,7 +13,7 @@ class Calculator {
     this.currentOPeration = 0;
     this.operand = undefined;
     this.array = [];
-    this.prevCalcTextElement.innerText = '';
+    this.calcHistory.innerText = '';
   }
 
   // Add the last 10 calculations to an array for display
@@ -88,7 +88,7 @@ class Calculator {
 
   // Update the display for the previous 10 calculations
   updatePrevCalcDisplay() {
-    this.prevCalcTextElement.innerText = this.array;
+    this.calcHistory.innerText = this.array;
   }
 }
 numberBtn = document.querySelectorAll('[data-number');
@@ -97,12 +97,12 @@ equalBtn = document.querySelector('[data-equal');
 clearBtn = document.querySelector('[data-clear');
 previousTextElement = document.querySelector('[data-previous');
 currentTextElement = document.querySelector('[data-current');
-prevCalcTextElement = document.querySelector('[data-prev-10-calc]');
+calcHistory = document.querySelector('[data-prev-10-calc]');
 
 const calculator = new Calculator(
   previousTextElement,
   currentTextElement,
-  prevCalcTextElement
+  calcHistory
 );
 
 // Methods for adding number, choosing operands and computing
